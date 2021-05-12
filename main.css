@@ -1,0 +1,66 @@
+div{
+    position: relative;
+    width: var(--size);
+    height:var(--size);
+    border:1.2vmin solid currentColor;
+    border-radius:20%;
+    font-size:3vmin;
+    margin:5vmin;
+    color:hsl(var(--hue, 198), 95%, 54%);
+
+    --size:20vmin;
+}
+.supported div:nth-of-type(2){
+    --hue: 168
+}
+div::before{
+    content: attr(id);
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    text-align: center;
+    transform: translateY(-5vmin);
+}
+div::after{
+    content: ':)';
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    transform:rotate(90deg);
+    font-size:10vmin;
+}
+
+html:not(.supported) div:nth-of-type(2)::after{
+    content: ':('
+}
+html:not(.supported) div:nth-of-type(2){
+    --hue:343;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    background: hsl(223, 80%, 12%);
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+select{
+    position: absolute;
+    top: 1rem;
+    display: none;
+}
+.supported select{
+    display: initial;
+}
