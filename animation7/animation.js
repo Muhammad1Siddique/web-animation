@@ -31,6 +31,23 @@ var animate = [
 var duration = {
     duration: 15000,
     iterations: Infinity
+    // direction: "alternate"
 }
-circle.animate(animate, duration);
+var circleAction = circle.animate(animate, duration);
+
+document.querySelector('.play').addEventListener("click", function(){
+    circleAction.play();
+})
+
+document.querySelector('.pause').addEventListener("click", function(){
+    circleAction.pause();
+})
+
+document.querySelector('.reverse').addEventListener("click", function(){
+    circleAction.reverse();
+})
+
+document.querySelector('.updatePlaybackRate').addEventListener("click", function(){
+    circleAction.updatePlaybackRate(circleAction.playbackRate* 1.1);
+})
 })
