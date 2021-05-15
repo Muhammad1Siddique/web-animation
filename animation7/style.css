@@ -1,0 +1,10 @@
+.box{
+    width: 125px;
+    height: 125px;
+    background-color: tomato;
+    color: purple;
+    border-radius: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
